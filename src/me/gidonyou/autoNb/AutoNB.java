@@ -1,6 +1,7 @@
 package me.gidonyou.autoNb;
 
 import me.gidonyou.autoNb.commands.Anb;
+import me.gidonyou.autoNb.commands.Nb;
 import me.gidonyou.autoNb.handlers.GUIInventoryManager;
 import me.gidonyou.autoNb.listener.PlayerInventoryClicked;
 import me.gidonyou.autoNb.threads.MainThread;
@@ -19,9 +20,11 @@ public class AutoNB extends JavaPlugin {
 
 		getServer().getPluginManager().registerEvents(
 				new PlayerInventoryClicked(this), this);
-		saveDefaultConfig();saveConfig();
-		
+		saveDefaultConfig();
+		saveConfig();
+
 		getCommand("anb").setExecutor(new Anb(this));
+		getCommand("nb").setExecutor(new Nb(this));
 
 	}
 
@@ -29,12 +32,12 @@ public class AutoNB extends JavaPlugin {
 		getServer().getScheduler().cancelAllTasks();
 		saveConfig();
 	}
-	
-	public boolean getState(){
+
+	public boolean getState() {
 		return getConfig().getBoolean("enabled");
 	}
-	
-	public void updateGui(){
+
+	public void updateGui() {
 		new GUIInventoryManager(this).update();
 	}
 

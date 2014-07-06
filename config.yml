@@ -1,2 +1,4 @@
 enabled: true
 defaultTime: 600
+username: root
+password: pass

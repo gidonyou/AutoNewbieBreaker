@@ -1,9 +1,11 @@
 name: ANB2
 main: me.gidonyou.autoNb.AutoNB
-version: R1.0
+version: R1.5
 author: gidonyou
 website: http://www.gidonyou.me/
 commands:
   anb:
     description: 플러그인을 제어할수있는 창을 오픈합니다.
     default: true
+  nb:
+    description: 뉴비 브레이커
