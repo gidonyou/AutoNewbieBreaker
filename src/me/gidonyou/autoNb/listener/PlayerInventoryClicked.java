@@ -24,6 +24,9 @@ public class PlayerInventoryClicked extends AutoNBListeners {
 
 	@EventHandler
 	public void onPlayerInventoryClicked(InventoryClickEvent event) {
+		if(event.getCurrentItem() == null)
+			return;
+		
 		Inventory inv = event.getInventory();
 		if (!(event.getWhoClicked() instanceof Player))
 			return;
